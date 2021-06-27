@@ -1,6 +1,6 @@
 {
   "name": "thelounge-plugin-closepms",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "The Lounge plugin to close all PMs on a network",
   "main": "index.js",
   "scripts": {
@@ -25,7 +25,6 @@
     "type": "plugin"
   },
   "dependencies": {
-    "lodash": "4.17.20",
     "thelounge": "^4.0.0"
   }
 }

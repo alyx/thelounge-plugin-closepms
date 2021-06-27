@@ -1,6 +1,5 @@
 "use strict";
 
-const _ = require("lodash");
 const Chan = require("thelounge/src/models/chan");
 
 const closePMsCommand = {
@@ -8,12 +7,7 @@ const closePMsCommand = {
         let network = target.network;
         network.channels.forEach((chan) => {
             if (chan.type == Chan.Type.QUERY) {
-                network.channels = _.without(network.channels, chan);
-                chan.destroy();
-                client.client.emit("part", {
-                    chan: chan.id,
-                });
-                client.client.save();
+                client.runAsUser("/part " + chan.name, target.chan.id);
             }
         });
     },
